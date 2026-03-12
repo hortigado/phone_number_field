@@ -100,8 +100,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
     }
     node = widget.phoneConfig.focusNode ?? FocusNode();
     if (widget.phoneConfig.autovalidateMode == AutovalidateMode.always && widget.validator != null) {
-      String? error = widget
-          .validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
+      String? error = widget.validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
       if (errorText != error) {
         errorText = error;
       }
@@ -112,13 +111,20 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
   }
 
   void controllerOnChange() {
+    if (!mounted) return; // 👈 CLAVE
+
+    if (widget.initCode != null && countries != null) {
+      selected = countries!.firstWhere(
+        (element) => element.code.toLowerCase() == widget.initCode!.toLowerCase(),
+      );
+    } else {
+      selected = widget.initCountry;
+    }
     if (widget.onInputChanged != null) {
-      widget
-          .onInputChanged!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
+      widget.onInputChanged!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
     }
     if (widget.validator != null) {
-      String? error = widget
-          .validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
+      String? error = widget.validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
       if (errorText != error) {
         setState(() {
           errorText = error;
@@ -136,8 +142,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
 
   void listenNode() {
     if (node.hasFocus && widget.phoneConfig.autovalidateMode == AutovalidateMode.onUserInteraction && widget.validator != null) {
-      String? error = widget
-          .validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
+      String? error = widget.validator!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
       if (errorText != error) {
         errorText = error;
         if (mounted) setState(() {});
@@ -176,10 +181,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
                                         selected = countryCodeModel;
                                       });
                                       if (widget.onInputChanged != null) {
-                                        widget.onInputChanged!(IntPhoneNumber(
-                                            code: selected.code,
-                                            dial_code: selected.dial_code,
-                                            number: widget.controller.text.trimLeft().trimRight()));
+                                        widget.onInputChanged!(IntPhoneNumber(code: selected.code, dial_code: selected.dial_code, number: widget.controller.text.trimLeft().trimRight()));
                                       }
                                     },
                                     dialogConfig: widget.dialogConfig,
@@ -210,6 +212,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
                           Text(
                             widget.viewDialCode ? selected.dial_code : selected.name,
                             style: widget.countryConfig.textStyle,
+                            overflow: TextOverflow.fade,
                           )
                         ],
                       ),
@@ -271,6 +274,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
     } else {
       countries = GeneralUtil.loadJson();
     }
+    if (!mounted) return;
     setState(() {});
   }
 
@@ -283,6 +287,7 @@ class _InternationalPhoneNumberInputState extends State<InternationalPhoneNumber
         log("Json Converter Failed: ", error: e, stackTrace: stackTrace);
       }
     }));
+    if (!mounted) return;
     setState(() {});
   }
 }

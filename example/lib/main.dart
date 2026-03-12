@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_print
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // ignore: depend_on_referenced_packages
@@ -60,8 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   controller: controller,
                   inputFormatters: const [],
                   formatter: MaskedInputFormatter('### ### ## ##'),
-                  initCountry: CountryCodeModel(
-                      name: "United States", dial_code: "+1", code: "US"),
+                  initCountry: CountryCodeModel(name: "United States", dial_code: "+1", code: "US"),
                   betweenPadding: 23,
                   onInputChanged: (phone) {
                     print(phone.code);
@@ -88,35 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         fit: BoxFit.fitWidth,
                       ),
                     ),
-                    textStyle: TextStyle(
-                        color: const Color(0xFFFAFAFA).withOpacity(0.7),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                    searchBoxTextStyle: TextStyle(
-                        color: const Color(0xFFFAFAFA).withOpacity(0.7),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                    titleStyle: const TextStyle(
-                        color: Color(0xFFFAFAFA),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700),
-                    searchBoxHintStyle: TextStyle(
-                        color: const Color(0xFFFAFAFA).withOpacity(0.7),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
+                    textStyle: TextStyle(color: const Color(0xFFFAFAFA).withOpacity(0.7), fontSize: 14, fontWeight: FontWeight.w600),
+                    searchBoxTextStyle: TextStyle(color: const Color(0xFFFAFAFA).withOpacity(0.7), fontSize: 14, fontWeight: FontWeight.w600),
+                    titleStyle: const TextStyle(color: Color(0xFFFAFAFA), fontSize: 18, fontWeight: FontWeight.w700),
+                    searchBoxHintStyle: TextStyle(color: const Color(0xFFFAFAFA).withOpacity(0.7), fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   countryConfig: CountryConfig(
                       decoration: BoxDecoration(
-                        border: Border.all(
-                            width: 2, color: const Color(0xFF3f4046)),
+                        border: Border.all(width: 2, color: const Color(0xFF3f4046)),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       flatFlag: true,
-                      noFlag: false,
-                      textStyle: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600)),
+                      noFlag: Platform.isIOS ? true : false,
+                      textStyle: const TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w600)),
                   validator: (number) {
                     if (number.number.isEmpty) {
                       return "The phone number cannot be left emptyssss";
@@ -143,16 +128,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     errorTextMaxLength: 2,
                     errorPadding: const EdgeInsets.only(top: 14),
-                    errorStyle: const TextStyle(
-                        color: Color(0xFFFF5494), fontSize: 12, height: 1),
-                    textStyle: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400),
-                    hintStyle: TextStyle(
-                        color: Colors.black.withOpacity(0.5),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400),
+                    errorStyle: const TextStyle(color: Color(0xFFFF5494), fontSize: 12, height: 1),
+                    textStyle: const TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w400),
+                    hintStyle: TextStyle(color: Colors.black.withOpacity(0.5), fontSize: 16, fontWeight: FontWeight.w400),
                   ),
                 ),
               ],

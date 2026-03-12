@@ -10,8 +10,7 @@ class CountryCodeModel {
   final String dial_code;
   final String code;
 
-  CountryCodeModel(
-      {required this.name, required this.dial_code, required this.code});
+  CountryCodeModel({required this.name, required this.dial_code, required this.code});
 
   CountryCodeModel fromJson(Map<String, dynamic> json) {
     return _$CountryCodeModelFromJson(json);

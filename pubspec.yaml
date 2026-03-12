@@ -13,6 +13,7 @@ dependencies:
   json_annotation: ^4.9.0
   flutter_multi_formatter: ^2.12.8
   country_flags: ^2.2.0
+  dlibphonenumber: ^1.1.48
 
 dev_dependencies:
   flutter_test:
