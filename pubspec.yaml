@@ -14,7 +14,6 @@ dependencies:
   flutter_multi_formatter: ^2.12.8
   country_flags: ^4.1.2
   dlibphonenumber: ^1.1.48
-  flutter_country_flags: ^0.0.1
 
 dev_dependencies:
   flutter_test:
