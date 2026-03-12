@@ -22,6 +22,7 @@
         "country_flags",
         "dlibphonenumber",
         "flutter",
+        "flutter_country_flags",
         "flutter_multi_formatter",
         "json_annotation"
       ]
@@ -69,19 +70,9 @@
       ]
     },
     {
-      "name": "json_annotation",
-      "version": "4.9.0",
+      "name": "flutter_country_flags",
+      "version": "0.0.1",
       "dependencies": [
-        "meta"
-      ]
-    },
-    {
-      "name": "flutter_multi_formatter",
-      "version": "2.13.0",
-      "dependencies": [
-        "base58check",
-        "bech32",
-        "collection",
         "flutter"
       ]
     },
@@ -101,6 +92,23 @@
         "collection",
         "flutter",
         "jovial_svg"
+      ]
+    },
+    {
+      "name": "flutter_multi_formatter",
+      "version": "2.13.0",
+      "dependencies": [
+        "base58check",
+        "bech32",
+        "collection",
+        "flutter"
+      ]
+    },
+    {
+      "name": "json_annotation",
+      "version": "4.9.0",
+      "dependencies": [
+        "meta"
       ]
     },
     {
@@ -210,21 +218,6 @@
       "dependencies": []
     },
     {
-      "name": "bech32",
-      "version": "0.2.2",
-      "dependencies": [
-        "convert"
-      ]
-    },
-    {
-      "name": "base58check",
-      "version": "2.0.0",
-      "dependencies": [
-        "collection",
-        "crypto"
-      ]
-    },
-    {
       "name": "fixnum",
       "version": "1.1.1",
       "dependencies": []
@@ -250,6 +243,21 @@
         "meta",
         "vector_math",
         "xml"
+      ]
+    },
+    {
+      "name": "bech32",
+      "version": "0.2.2",
+      "dependencies": [
+        "convert"
+      ]
+    },
+    {
+      "name": "base58check",
+      "version": "2.0.0",
+      "dependencies": [
+        "collection",
+        "crypto"
       ]
     },
     {
@@ -310,20 +318,6 @@
       ]
     },
     {
-      "name": "convert",
-      "version": "3.1.1",
-      "dependencies": [
-        "typed_data"
-      ]
-    },
-    {
-      "name": "crypto",
-      "version": "3.0.4",
-      "dependencies": [
-        "typed_data"
-      ]
-    },
-    {
       "name": "http",
       "version": "1.2.2",
       "dependencies": [
@@ -358,16 +352,23 @@
       ]
     },
     {
+      "name": "convert",
+      "version": "3.1.1",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
+      "name": "crypto",
+      "version": "3.0.4",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
       "name": "vm_service",
       "version": "15.0.0",
       "dependencies": []
-    },
-    {
-      "name": "typed_data",
-      "version": "1.3.2",
-      "dependencies": [
-        "collection"
-      ]
     },
     {
       "name": "web",
@@ -389,6 +390,13 @@
       "version": "6.0.2",
       "dependencies": [
         "meta"
+      ]
+    },
+    {
+      "name": "typed_data",
+      "version": "1.3.2",
+      "dependencies": [
+        "collection"
       ]
     }
   ],

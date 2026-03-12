@@ -10,6 +10,7 @@
         "country_flags",
         "dlibphonenumber",
         "flutter",
+        "flutter_country_flags",
         "flutter_multi_formatter",
         "json_annotation"
       ],
@@ -41,6 +42,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "flutter_country_flags",
+      "version": "0.0.1",
+      "dependencies": [
+        "flutter"
       ]
     },
     {

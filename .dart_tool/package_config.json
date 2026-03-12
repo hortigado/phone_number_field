@@ -92,6 +92,12 @@
       "languageVersion": "3.9"
     },
     {
+      "name": "flutter_country_flags",
+      "rootUri": "file:///Users/hortigado/.pub-cache/hosted/pub.dev/flutter_country_flags-0.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/hortigado/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3",
       "packageUri": "lib/",

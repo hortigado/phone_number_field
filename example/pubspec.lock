@@ -126,6 +126,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_country_flags:
+    dependency: transitive
+    description:
+      name: flutter_country_flags
+      sha256: "4b86fd4cf7af4394244b9b5b43be8cdcefb413d52526da6fc9b51fe74d7be352"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   flutter_lints:
     dependency: "direct dev"
     description:
