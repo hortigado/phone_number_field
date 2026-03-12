@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       flatFlag: true,
-                      noFlag: Platform.isIOS ? true : false,
+                      noFlag: /* Platform.isIOS ? true :  */ false,
                       textStyle: const TextStyle(color: Colors.black, fontSize: 14, fontWeight: FontWeight.w600)),
                   validator: (number) {
                     if (number.number.isEmpty) {
