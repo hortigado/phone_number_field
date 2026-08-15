@@ -8,10 +8,10 @@
       "version": "0.2.2",
       "dependencies": [
         "country_flags",
-        "dlibphonenumber",
         "flutter",
         "flutter_multi_formatter",
-        "json_annotation"
+        "json_annotation",
+        "phone_numbers_parser"
       ],
       "devDependencies": [
         "flutter_lints",
@@ -44,12 +44,10 @@
       ]
     },
     {
-      "name": "dlibphonenumber",
-      "version": "1.1.48",
+      "name": "phone_numbers_parser",
+      "version": "9.0.20",
       "dependencies": [
-        "fixnum",
-        "meta",
-        "protobuf"
+        "meta"
       ]
     },
     {
@@ -177,20 +175,6 @@
         "stream_channel",
         "string_scanner",
         "term_glyph"
-      ]
-    },
-    {
-      "name": "fixnum",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "protobuf",
-      "version": "4.2.0",
-      "dependencies": [
-        "collection",
-        "fixnum",
-        "meta"
       ]
     },
     {

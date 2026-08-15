@@ -20,6 +20,7 @@ import 'view/rixa_textfield.dart';
 
 export 'package:flutter_multi_formatter/formatters/masked_input_formatter.dart';
 
+export 'util/format/phone_number_util.dart';
 export 'models/country_code_model.dart';
 export 'models/country_config.dart';
 export 'models/dialog_config.dart';
